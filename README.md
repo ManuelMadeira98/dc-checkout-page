@@ -26,10 +26,6 @@
 
 ![Mobile screenshot](./design/mobile.png)
 
-## Mobile
-
-![Mobile screenshot](./design/tablet.png)
-
 ## Desktop
 
 ![Desktop screenshot](./design/desktop.png)
