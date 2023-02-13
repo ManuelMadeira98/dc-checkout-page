@@ -1,0 +1,46 @@
+<section class="contact">
+	<p class="contact__title">Contact information</p>
+
+	<form [formGroup]="contactForm" autocomplete="off">
+		<app-input [inputField]="contactForm.get('email')">
+			<label
+				inputLabel
+				class="input__label"
+				for="input-email"
+				[class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+			>
+				E-mail
+			</label>
+			<label inputIcon class="input__icon material-symbols-outlined" for="input-email">mail</label>
+			<input
+				inputField
+				id="input-email"
+				class="input__field"
+				placeholder="Enter your email..."
+				formControlName="email"
+				required
+				[type]="inputTypes.Email"
+			/>
+		</app-input>
+
+		<app-input [inputField]="contactForm.get('phone')">
+			<label
+				inputLabel
+				class="input__label"
+				for="input-phone"
+				[class.invalid]="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched"
+			>
+				Phone
+			</label>
+			<label inputIcon class="input__icon material-symbols-outlined" for="input-phone">call</label>
+			<input
+				inputField
+				id="input-phone"
+				class="input__field"
+				placeholder="Enter your phone..."
+				formControlName="phone"
+				[type]="inputTypes.Tel"
+			/>
+		</app-input>
+	</form>
+</section>

@@ -1,0 +1,23 @@
+.contact {
+	&__title {
+		font-size: .875rem;
+		color: var(--clr-primary-900);
+	}
+
+	app-input:last-of-type {
+		display: block;
+		margin-top: 1rem
+	}
+}
+
+@media (width >= 969px) {
+	.contact {
+		&__title {
+			font-size: 1.125rem;
+		}
+
+		app-input:last-of-type {
+			margin-top: 1.25rem;
+		}
+	}
+}

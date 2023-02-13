@@ -1,0 +1,134 @@
+.cart {
+	display: flex;
+	flex-direction: column;
+	background-color: #F2F2F2;
+	border-radius: .75rem;
+	padding: 1.9375rem 1.6875rem 1rem;
+	max-height: 501px;
+
+	&__products-wrap {
+		overflow-y: auto;
+	}
+
+	&__product {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.25rem;
+		width: 100%;
+
+		&:not(:nth-child(1)) {
+			margin-top: 1.8125rem;
+		}
+
+		&__picture {
+			width: 7.6875rem;
+			height: 7.8125rem;
+			border-radius: .8125rem;
+		}
+
+		&__details {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			&__name {
+				font-size: .75rem;
+				color: var(--clr-neutral-300);
+			}
+
+			&__price {
+				font-size: .875rem;
+				color: var(--clr-primary-300);
+				display: inline-flex;
+				align-items: center;
+				gap: 1rem;
+
+				&::after {
+					content: '$' attr(data-strike);
+					font-size: .625rem;
+					text-decoration-line: line-through;
+					color: var(--clr-neutral-300);
+				}
+			}
+		}
+	}
+
+	&__counter {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 7.6875rem;
+		height: 3.125rem;
+		padding: 1.0625rem .625rem;
+		border: 1px solid var(--clr-neutral-200);
+		border-radius: .75rem;
+
+		&__toggle {
+			width: 1.1875rem;
+			height: 1.1875rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #E0E0E0;
+			border-radius: .25rem;
+			color: var(--clr-neutral-200);
+			font-size: 1.125rem;
+
+			&:is(:hover, :focus) {
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__costs {
+		margin-top: 5.4375rem;
+
+		hr {
+			border: 1px solid #BDBDBD;
+
+			&:first-of-type {
+				margin-bottom: .625rem;
+			}
+
+			&:last-of-type {
+				margin: .625rem 0;
+			}
+		}
+
+		&__shipping, &__total {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		span {
+			font-size: .875rem;
+			color: var(--clr-primary-900);
+		}
+	}
+}
+
+@media (width >= 969px) {
+	.cart {
+		&__product {
+			&__details {
+				&__name {
+					font-size: 1rem;
+				}
+
+				&__price {
+					font-size: 1rem;
+	
+					&::after {
+						font-size: .75rem;
+					}
+				}
+			}
+		}
+
+		&__costs {
+			span:nth-child(1) {
+				font-size: 1.125rem;
+			}
+		}
+	}
+}

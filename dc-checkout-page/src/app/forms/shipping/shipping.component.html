@@ -1,0 +1,122 @@
+<section class="shipping">
+	<p class="shipping__title">Shipping information</p>
+
+	<form [formGroup]="shippingForm" autocomplete="off">
+		<!-- Name -->
+		<app-input [inputField]="shippingForm.get('name')">
+			<label
+				inputLabel
+				class="input__label"
+				for="input-name"
+				[class.invalid]="shippingForm.get('name')?.invalid && shippingForm.get('name')?.touched"
+			>
+				Full name
+			</label>
+			<label inputIcon class="input__icon material-symbols-outlined" for="input-name">account_circle</label>
+			<input
+				inputField
+				id="input-name"
+				class="input__field"
+				placeholder="Enter your name..."
+				formControlName="name"
+				required
+				[type]="inputTypes.Text"
+			/>
+		</app-input>
+
+		<!-- Address -->
+		<app-input [inputField]="shippingForm.get('address')">
+			<label
+				inputLabel
+				class="input__label"
+				for="input-address"
+				[class.invalid]="shippingForm.get('address')?.invalid && shippingForm.get('address')?.touched"
+			>
+				Address
+			</label>
+			<label inputIcon class="input__icon material-symbols-outlined" for="input-address">home</label>
+			<input
+				inputField
+				id="input-address"
+				class="input__field"
+				placeholder="Your address..."
+				formControlName="address"
+				required
+				[type]="inputTypes.Text"
+			/>
+		</app-input>
+
+		<!-- City -->
+		<app-input [inputField]="shippingForm.get('city')">
+			<label
+				inputLabel
+				class="input__label"
+				for="input-city"
+				[class.invalid]="shippingForm.get('city')?.invalid && shippingForm.get('city')?.touched"
+			>
+				City
+			</label>
+			<label inputIcon class="input__icon material-symbols-outlined" for="input-city">apartment</label>
+			<input
+				inputField
+				id="input-city"
+				class="input__field"
+				placeholder="Your city..."
+				formControlName="city"
+				required
+				[type]="inputTypes.Text"
+			/>
+		</app-input>
+
+		<!-- Country & Zipcode-->
+		<div class="row-group">
+			<!-- Country -->
+			<app-input [inputField]="shippingForm.get('country')">
+				<label
+					inputLabel
+					class="input__label"
+					for="input-country"
+					[class.invalid]="shippingForm.get('country')?.invalid && shippingForm.get('country')?.touched"
+				>
+					Country
+				</label>
+				<label inputIcon class="input__icon material-symbols-outlined" for="input-country">public</label>
+				<select
+					inputField
+					id="input-country"
+					class="input__field"
+					formControlName="country"
+					required
+				>
+					<option value="" disabled selected>Your country...</option>
+					<option value="australia">Australia</option>
+					<option value="canada">Canada</option>
+					<option value="usa">USA</option>
+				</select>
+			</app-input>
+
+			<!-- Zipcode -->
+			<app-input [inputField]="shippingForm.get('zipcode')">
+				<label
+					inputLabel
+					class="input__label"
+					for="input-zipcode"
+					[class.invalid]="shippingForm.get('zipcode')?.invalid && shippingForm.get('zipcode')?.touched"
+				>
+					Zipcode
+				</label>
+				<label inputIcon class="input__icon material-symbols-outlined" for="input-zipcode">map</label>
+				<input
+					inputField
+					id="input-zipcode"
+					class="input__field"
+					placeholder="Your zipcode..."
+					formControlName="zipcode"
+					required
+					[type]="inputTypes.Text"
+				/>
+			</app-input>
+		</div>
+		<mat-checkbox>Save this information for next time</mat-checkbox>
+	</form>
+</section>

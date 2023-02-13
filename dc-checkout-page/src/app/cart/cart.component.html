@@ -1,0 +1,33 @@
+<section class="cart">
+	<div class="cart__products-wrap">
+		<ng-container *ngFor="let product of products; let index=index">
+			<article class="cart__product" *ngIf="product.quantity >= 1" [@inOutAnimation]>
+				<img class="cart__product__picture" [src]="product.picture" [alt]="product.name">
+				<div class="cart__product__details">
+					<div>
+						<p class="cart__product__details__name">{{ product.name }}</p>
+						<span class="cart__product__details__price" [attr.data-strike]="product.strike">${{ product.price }}</span>
+					</div>
+					<div class="cart__counter">
+						<div class="cart__counter__toggle" (click)="remove(index)">-</div>
+						{{ product.quantity }}
+						<div class="cart__counter__toggle" (click)="add(index)">+</div>
+					</div>
+				</div>
+			</article>
+		</ng-container>
+	</div>
+
+	<div class="cart__costs">
+		<hr>
+		<div class="cart__costs__shipping">
+			<span>Shipping</span>
+			<span>$19</span>
+		</div>
+		<hr>
+		<div class="cart__costs__total">
+			<span>Total</span>
+			<span>${{ total }}</span>
+		</div>
+	</div>
+</section>

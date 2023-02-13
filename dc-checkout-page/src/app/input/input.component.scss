@@ -1,0 +1,86 @@
+::ng-deep {
+	.input {
+		outline: 1px solid var(--clr-neutral-200);
+		border-radius: 0.75rem;
+		padding: 0.875rem 0.75rem;
+		display: flex;
+		align-items: center;
+		gap: 0.8125rem;
+		max-height: 2.5625rem;
+
+		&.invalid {
+			outline: 1px solid red;
+		}
+
+		&__label {
+			font-size: 0.625rem;
+			color: var(--clr-neutral-400);
+
+			&.invalid {
+				color: red;
+			}
+		}
+
+		&__icon {
+			color: var(--clr-neutral-200);
+			font-size: 1rem;
+		}
+
+		&__field {
+			outline: none;
+			max-height: 1rem;
+			width: 100%;
+			font-size: 0.75rem;
+			border: 0.1px solid var(--clr-neutral-100);
+		}
+
+		&__field:not(select) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		:hover,
+		&__label:hover {
+			cursor: pointer;
+		}
+	}
+
+	select {
+		max-height: 1.375rem !important;
+		margin-bottom: 1px;
+
+		&:required:invalid {
+			color: gray;
+		}
+	}
+
+	option {
+		color: var(--clr-primary-900);
+
+		&[value=""][disabled] {
+			display: none;
+		}
+	}
+}
+
+@media (width >= 969px) {
+	::ng-deep {
+		.input {
+			&__label {
+				font-size: .75rem;
+			}
+
+			&__icon {
+				font-size: 1.25rem;
+			}
+
+			&__field {
+				font-size: 1rem;
+			}
+
+			select {
+				max-height: 1.375rem;
+			}
+		}
+	}
+}

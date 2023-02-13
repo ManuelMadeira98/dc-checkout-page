@@ -1,0 +1,5 @@
+<ng-content select="[inputLabel]"></ng-content>
+<div class="input" [class.invalid]="inputField?.invalid && inputField?.touched">
+	<ng-content select="[inputIcon]"></ng-content>
+	<ng-content select="[inputField]"></ng-content>
+</div>

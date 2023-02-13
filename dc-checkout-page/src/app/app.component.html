@@ -1,0 +1,11 @@
+<main class="checkout">
+	<h1 class="checkout__title">Checkout</h1>
+	<div class="grid">
+		<app-cart [products]="products"></app-cart>
+		<div class="grid__col">
+			<app-contact [contactForm]="contactForm" (onFormReady)="onContactFormReady($event)"></app-contact>
+			<app-shipping [shippingForm]="shippingForm" (onFormReady)="onShippingFormReady($event)"></app-shipping>
+		</div>
+		<button class="checkout__submit" type="submit" (click)="onSubmit()">Continue</button>
+	</div>
+</main>

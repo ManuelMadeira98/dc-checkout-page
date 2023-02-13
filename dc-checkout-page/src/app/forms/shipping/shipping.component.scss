@@ -1,0 +1,37 @@
+.shipping {
+	&__title {
+		font-size: .875rem;
+		color: var(--clr-primary-900);
+	}
+
+	app-input:not(:first-of-type, :last-child) {
+		display: block;
+		margin-top: 1rem;
+	}
+
+	.row-group {
+		display: flex;
+		gap: 1.5rem;
+		margin-top: 1rem;
+
+		& > app-input {
+			flex: 1;
+		}
+	}
+}
+
+@media (min-width: 969px) {
+	.shipping {
+		&__title {
+			font-size: 1.125rem;
+		}
+
+		app-input:not(:first-of-type, :last-child) {
+			margin-top: 1.25rem;
+		}
+
+		.row-group {
+			margin-top: 1.25rem;
+		}
+	}
+}
